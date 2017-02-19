@@ -3,7 +3,7 @@ Centenis is an application used to detect and diagnose early stage Alzheimer's d
 
 To run the app:
 
-1. Run 'git clone https://github.com/calufornia/centenis.git' in an appropriate directory.
+1. Run `git clone https://github.com/calufornia/centenis.git` in an appropriate directory.
 
 2. Set up a Python virtual environment in the same directory as step 1 by first running `pip install virtualenv`, and then `virtualenv -p /usr/bin/python2.7 venv`
 
