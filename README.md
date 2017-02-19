@@ -9,6 +9,6 @@ To run the app:
 
 3. Enter the virtual environment by execeuting `source venv/bin/activate`, and run `pip install -r requirements.txt`
 
-4. In settings.cfg, enter the API keys for Watson's Visual Recognition API and BigHugeLab's Thesaurus API in the respective spots (don't include braces).
+4. In `settings.cfg`, enter the API keys for Watson's Visual Recognition API and BigHugeLab's Thesaurus API in the respective spots (don't include braces or quotes).
 
-5. To launch the app, cd into centenis and run `python centenis.py`
+5. To launch the app, `cd` into centenis and run `python centenis.py`
