@@ -1,6 +1,5 @@
-from urllib2 import Request, urlopen
+from urllib2 import Request, urlopen, HTTPError
 
-api_key = 'ad74d3ccf397694429ae145c20db06cc'  # DO NOT CHANGE
 version = '2'  # DO NOT CHANGE
 base_url = 'http://words.bighugelabs.com/api/{}/{}/{}/'
 
@@ -11,16 +10,21 @@ def is_synonym(nym):
     return nym == syn
 
 
-def get_synonyms(word):
+def get_synonyms(word, api_key):
     synonym_list = [word]
     url = base_url.format(version, api_key, word)
     request = Request(url)
-    response = urlopen(request)
+
+    try:
+        response = urlopen(request)
+    except HTTPError:
+        return synonym_list
+
     result = response.read()
+
     nyms = result.split('\n')
     for line in range(len(nyms) - 1):
         nym = nyms[line].split('|')
-        print(nym)
         if is_synonym(nym[1]):
             synonym_list += [nym[2]]
     return synonym_list
