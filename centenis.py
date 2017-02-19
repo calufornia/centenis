@@ -47,4 +47,4 @@ if __name__ == '__main__':
     config = SafeConfigParser()
     config.read('settings.cfg')
     settings = Settings(config.get('watson', 'api_key'), config.get('bighugelabs', 'api_key'))
-    app.run(debug=True)
+    app.run(debug=False)

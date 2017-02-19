@@ -13,13 +13,13 @@ def classify(img_path, api_key):
     words = []
     for c in classes:
         words.extend(c['class'].split(' '))
-    print('Classifications: ' + str(words))
+    print('CLASSIFICATIONS: ' + str(words))
     return words
 
 
 def score(guess, prev_words, words, api_key):
     synonyms = get_synonyms(guess, api_key)
-    print('Synonyms: ' + str(synonyms))
+    print('SYNONYMS: ' + str(synonyms))
     num_matches = 0
     for synonym in synonyms:
         if synonym not in prev_words and synonym in words:
