@@ -1,8 +1,6 @@
 from os.path import join, dirname
 from watson_developer_cloud import VisualRecognitionV3
 
-img_path = './static/images/airplane_0008.jpg'
-
 
 def classify(img_path):
     visual_recognition = VisualRecognitionV3('2016-05-20', api_key='3f9715d01175fea2d469518dd06a59cad135d59c')
@@ -14,16 +12,18 @@ def classify(img_path):
     words = []
     for c in classes:
         words += [c['class']]
+    print(words)
     return words
 
 
-def score(input, prev_words, words):
-    if input in prev_words:
+def score(guess, prev_words, words):
+    if guess in prev_words:
         return False
-    elif input in words:
+    elif guess in words:
         return True
     else:
         return False
 
 
-print(classify(img_path))
+def increment(guess, prev_words, img_path):
+    return score(guess, prev_words, classify(img_path))

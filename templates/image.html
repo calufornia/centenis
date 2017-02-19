@@ -1,6 +1,4 @@
 <!doctype html>
-{#<title>Hello from Flask</title>#}
-{#<h1>Hello World!</h1>#}
 <html>
 <head>
     <head>
@@ -14,10 +12,8 @@
 
         <title>Starter Template for Bootstrap</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="https://bootswatch.com/cosmo/bootstrap.min.css" rel="stylesheet">
+        <link href="https://bootswatch.com/simplex/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Custom styles for this template -->
         <link href="starter-template.css" rel="stylesheet">
     </head>
 </head>
@@ -25,10 +21,9 @@
 <div style="text-align: center;">
     <div style="height:500px">
         <div>
-            {#        {% for image_path in image_paths %}#}
             <img id="image" src={{ img }}>
-            {#        {% endfor %}#}
         </div>
+        <h1>Score: {{ count }}</h1>
         <div class="container text-center">
             {% from "_formhelpers.html" import render_field %}
             <form method=post action="/">
@@ -38,17 +33,9 @@
                 <p><input type=submit value="Enter guess">
             </form>
 
-        </div><!-- /.container -->
-        {#        <div style="text-align: center;">#}
-        {#            <form action="/" method="post">#}
-        {#                <p>Enter Word:</p>#}
-        {#                <p><input type="text" name="guess"/></p>#}
-        {#                <p><input type="submit" value="enter"/></p>#}
-        {#            </form>#}
-        {##}
-        {#        </div>#}
+        </div>
+        <a href="."><button style="width:200px; height:100px">Next</button></a>
     </div>
-    <a href="."><button style="width:200px; height:100px">Next</button></a>
 </div>
 
 
